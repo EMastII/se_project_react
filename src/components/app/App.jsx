@@ -51,8 +51,8 @@ function App() {
     document.addEventListener("keydown", closeOnEsc);
     document.addEventListener("click", closeOnOverlay);
     return () => {
-      (document.removeEventListener("keydown", closeOnEsc),
-        document.removeEventListener("click", closeOnOverlay));
+      document.removeEventListener("keydown", closeOnEsc);
+      document.removeEventListener("click", closeOnOverlay);
     };
   }, [activeModal]);
 
@@ -79,6 +79,7 @@ function App() {
         title="New Garment"
         buttonText="Add Garment"
         activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         onClose={closeActiveModal}
       >
         <label htmlFor="name" className="modal__label">
@@ -140,6 +141,7 @@ function App() {
         </fieldset>
       </ModalWithForm>
       <ItemModal
+        isOpen={activeModal === "preview"}
         activeModal={activeModal}
         card={selectedCard}
         onClose={closeActiveModal}
