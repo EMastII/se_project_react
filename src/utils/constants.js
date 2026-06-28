@@ -1,4 +1,4 @@
-const defaultClothingItems = [
+export const defaultClothingItems = [
   {
     _id: 1,
     name: "Boot",
@@ -97,4 +97,9 @@ const defaultClothingItems = [
   },
 ];
 
-export { defaultClothingItems };
+export const coordinates = {
+  latitude: 30.5444,
+  longitude: -97.5614,
+};
+
+export const APIkey = "42cd17de058e549e0c3b9f70f135db68";

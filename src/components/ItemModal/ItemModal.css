@@ -1,0 +1,38 @@
+.modal__content_type_image {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 16px;
+}
+
+.modal__image {
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.modal__footer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  padding-bottom: 32px;
+  font-family: "CabinetGrotesk-Bold", Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+.modal__content_type_image {
+  position: relative;
+}
+
+.modal__close_type_image {
+  position: absolute;
+  justify-content: center;
+  right: 24px;
+  top: 24px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+}

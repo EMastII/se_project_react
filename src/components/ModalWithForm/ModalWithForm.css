@@ -8,24 +8,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+}
+
+.modal__opened {
+  visibility: visible;
 }
 
 .modal__title {
   margin: 0;
+  padding-bottom: 52px;
 }
 
-.modal__close {
+.modal__label {
+  padding-bottom: 24px;
+}
+
+.modal__close_type_form {
   position: absolute;
+  justify-content: center;
   top: 20px;
   right: 28px;
 }
 
-.modal__content {
+.modal__content_type_form {
   background-color: #fff;
   position: relative;
   padding: 28px 28px 36px;
   max-width: 496px;
   box-sizing: border-box;
+  border-radius: 16px;
   width: 100%;
 }
 
@@ -36,6 +48,10 @@
 
 .modal__input {
   display: block;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #000000;
+  width: 100%;
 }
 
 .modal__radio-buttons {
