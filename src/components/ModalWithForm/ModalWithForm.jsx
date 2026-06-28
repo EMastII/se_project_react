@@ -2,11 +2,16 @@ import React from "react";
 import "./ModalWithForm.css";
 import wtwrClose from "../../images/wtwrClose.svg";
 
-function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  activeModal,
+  onClose,
+  name,
+}) {
   return (
-    <div
-      className={`modal ${activeModal === "add-garment" ? "modal__opened" : ""}`}
-    >
+    <div className={`modal ${activeModal !== "" ? "modal__opened" : ""}`}>
       <div className="modal__content modal__content_type_form">
         <h2 className="modal__title">{title}</h2>
         <button
@@ -20,7 +25,7 @@ function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
             className="modal__close-btn-img"
           />
         </button>
-        <form className="modal__form">
+        <form name={name} className="modal__form">
           {children}
           <button type="submit" className="modal__submit">
             {buttonText}

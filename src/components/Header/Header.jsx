@@ -1,6 +1,6 @@
 import "./Header.css";
-import wtwrlogo from "../../images/wtwrLogo.svg";
-import wtwravatar from "../../images/wtwrAvatar.svg";
+import wtwrLogo from "../../images/wtwrLogo.svg";
+import wtwrAvatar from "../../images/wtwrAvatar.svg";
 
 function Header({ handleAddClick, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -10,7 +10,7 @@ function Header({ handleAddClick, weatherData }) {
 
   return (
     <header className="header">
-      <img className="header__logo" src={wtwrlogo}></img>
+      <img className="header__logo" alt="WTWR logo" src={wtwrLogo} />
       <p className="header__date-and-place">
         {currentDate}, {weatherData.city}
       </p>
@@ -24,7 +24,7 @@ function Header({ handleAddClick, weatherData }) {
       <div className="header__user-container">
         <p className="header__username">Terrance Tegegne</p>
         <img
-          src={wtwravatar}
+          src={wtwrAvatar}
           alt="Terrance Tegegne"
           className="header__avatar"
         />
