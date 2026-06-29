@@ -10,6 +10,9 @@
   position: relative;
   align-items: center;
   border-radius: 16px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
 }
 
 .modal__footer {

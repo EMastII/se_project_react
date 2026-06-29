@@ -9,10 +9,18 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s 0.6s,
+    opacity 0.6s;
 }
 
 .modal__opened {
   visibility: visible;
+  opacity: 1;
+  transition:
+    visibility 0s,
+    opacity 0.6s;
 }
 
 .modal__title {
@@ -29,6 +37,19 @@
   justify-content: center;
   top: 20px;
   right: 28px;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close_type_form:hover {
+  opacity: 0.6;
 }
 
 .modal__content_type_form {

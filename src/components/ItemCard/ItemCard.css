@@ -4,6 +4,7 @@
   height: 325px;
   border-radius: 19px;
   border: 1px;
+  cursor: pointer;
 }
 .card__name {
   position: absolute;
