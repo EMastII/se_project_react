@@ -36,3 +36,16 @@
   border: none;
   z-index: 1;
 }
+
+.modal__delete-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  width: 25%;
+  color: red;
+  border: none;
+  background-color: #fff;
+  position: fixed;
+  right: 250px;
+  bottom: 130px;
+}

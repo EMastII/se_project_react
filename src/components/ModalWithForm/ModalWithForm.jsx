@@ -10,6 +10,7 @@ function ModalWithForm({
   onClose,
   name,
   isOpen,
+  onSubmit,
 }) {
   return (
     <div className={`modal ${isOpen ? "modal__opened" : ""}`}>
@@ -26,7 +27,7 @@ function ModalWithForm({
             className="modal__close-btn-img"
           />
         </button>
-        <form name={name} className="modal__form">
+        <form onSubmit={onSubmit} name={name} className="modal__form">
           {children}
           <button type="submit" className="modal__submit">
             {buttonText}

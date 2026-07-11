@@ -1,0 +1,37 @@
+.modal__confirmation-modal-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  width: 670px;
+  height: 280px;
+}
+.modal__opened {
+  visibility: visible;
+  opacity: 1;
+  transition:
+    visibility 0s,
+    opacity 0.6s;
+}
+.confirmation-modal__delete {
+  padding-top: 40px;
+  justify-content: center;
+  color: red;
+  border: none;
+  width: 25%;
+  background-color: #fff;
+  border: none;
+}
+.confirmation-modal__cancel {
+  width: 25%;
+  justify-content: center;
+  padding-top: 24px;
+  background-color: #fff;
+  border: none;
+}
+.confirmation-text {
+  padding-top: 50px;
+}

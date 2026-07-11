@@ -1,0 +1,23 @@
+.clothes-section {
+  flex-grow: 1;
+}
+
+.clothes-section__row {
+  display: flex;
+  gap: 40px;
+  left: 150px;
+}
+.clothes-section__items {
+  margin: 0;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.profile-add-new {
+  border: none;
+  gap: 40px;
+  background-color: #f3f3f3;
+}
+
+.clothes-section_title {
+  border: none;
+}
