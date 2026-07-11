@@ -41,28 +41,35 @@ function App() {
     setActiveModal("add-garment");
   };
 
-  const onAddItem = (items) => {
+  const handleAddNewClick = (event) => {
+    event.stopPropagation();
+    setActiveModal("add-garment");
+  };
+
+  const onAddItem = (item) => {
     const newCardData = {
-      name: items.name,
-      imageUrl: items.imageUrl,
-      weather: items.weatherType,
+      name: item.name,
+      imageUrl: item.imageUrl,
+      weather: item.weatherType,
     };
 
     postNewCard(newCardData)
       .then((data) => {
-        setClothingItems([...clothingItems, data]);
+        setClothingItems([data, ...clothingItems]);
         closeActiveModal();
       })
       .catch(console.error);
   };
+
   const handleDeleteCard = (id) => {
-    console.log(id);
     deleteItem(id)
-      .then(() => {
-        setClothingItems((clothingItems) =>
-          clothingItems.filter((item) => item._id !== id),
-        );
-        closeActiveModal();
+      .then((res) => {
+        if (res.ok) {
+          setClothingItems((clothingItems) =>
+            clothingItems.filter((item) => item._id !== id),
+          );
+          closeActiveModal();
+        }
       })
       .catch(console.error);
   };
@@ -138,6 +145,7 @@ function App() {
                 <Profile
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  handleAddNewClick={handleAddNewClick}
                 />
               }
             />

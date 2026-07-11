@@ -12,9 +12,8 @@
   flex-wrap: wrap;
   list-style-type: none;
 }
-.profile-add-new {
+.header__add-clothes-btn-profile {
   border: none;
-  gap: 40px;
   background-color: #f3f3f3;
 }
 

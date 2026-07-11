@@ -1,17 +1,17 @@
 import "./ItemCard.css";
 
-function ItemCard({ items, onCardClick }) {
+function ItemCard({ item, onCardClick }) {
   const handleCardClick = () => {
-    onCardClick(items);
+    onCardClick(item);
   };
   return (
     <li className="card">
-      <h2 className="card__name">{items.name}</h2>
+      <h2 className="card__name">{item.name}</h2>
       <img
         onClick={handleCardClick}
         className="card__image"
-        src={items.imageUrl}
-        alt={items.name}
+        src={item.imageUrl}
+        alt={item.name}
       />
     </li>
   );

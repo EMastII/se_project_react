@@ -22,14 +22,14 @@ function Main({
         <ul className="card__block">
           {" "}
           {clothingItems
-            .filter((items) => {
-              return items.weather === weatherData.type;
+            .filter((item) => {
+              return item.weather === weatherData.type;
             })
-            .map((items) => {
+            .map((item) => {
               return (
                 <ItemCard
-                  key={items._id}
-                  items={items}
+                  key={item._id}
+                  item={item}
                   onCardClick={onCardClick}
                 />
               );

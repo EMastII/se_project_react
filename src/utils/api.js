@@ -26,5 +26,5 @@ export const deleteItem = (id) => {
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  }).then(handleServerResponse);
 };
