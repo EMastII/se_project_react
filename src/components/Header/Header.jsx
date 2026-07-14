@@ -12,7 +12,7 @@ function Header({ handleAddClick, weatherData }) {
   });
 
   return (
-    <header className="header">
+    <header className="header" to="/">
       <NavLink className="header__nav-link-home" to="/se_project_react/">
         <img className="header__logo" alt="WTWR logo" src={wtwrLogo} />
       </NavLink>
