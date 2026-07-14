@@ -129,7 +129,7 @@ function App() {
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
           <Routes>
             <Route
-              path="/"
+              path="/se_project_react/"
               element={
                 <Main
                   clothingItems={clothingItems}
