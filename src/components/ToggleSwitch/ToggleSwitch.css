@@ -1,8 +1,7 @@
 .toggle-switch {
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  right: 380px;
+  position: relative;
   width: 56px;
   height: 28px;
   border: 2px solid grey;

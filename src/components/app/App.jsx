@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import { coordinates, apiKey } from "../../utils/constants.js";
+import { apiKey } from "../../utils/constants.js";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
@@ -106,12 +106,33 @@ function App() {
   }, [activeModal]);
 
   useEffect(() => {
-    getWeather(coordinates, apiKey)
-      .then((data) => {
-        const filteredData = filterWeatherData(data);
-        setWeatherData(filteredData);
-      })
-      .catch(console.error);
+    // Get user's geolocation
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const coordinates = { latitude, longitude };
+
+          getWeather(coordinates, apiKey)
+            .then((data) => {
+              const filteredData = filterWeatherData(data);
+              setWeatherData(filteredData);
+            })
+            .catch(console.error);
+        },
+        (error) => {
+          console.error("Geolocation error:", error);
+          // Fallback to default location if geolocation fails
+          const defaultCoordinates = { latitude: 40.7128, longitude: -74.006 };
+          getWeather(defaultCoordinates, apiKey)
+            .then((data) => {
+              const filteredData = filterWeatherData(data);
+              setWeatherData(filteredData);
+            })
+            .catch(console.error);
+        },
+      );
+    }
 
     getItems()
       .then((data) => {
@@ -176,4 +197,5 @@ function App() {
     </CurrentTemperatureUnitContext.Provider>
   );
 }
+
 export default App;

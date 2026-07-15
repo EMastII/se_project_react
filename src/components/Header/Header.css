@@ -32,6 +32,7 @@
 
 .header__date-and-place {
   margin: 0;
+  flex-grow: 1;
 }
 
 .header__logo {
